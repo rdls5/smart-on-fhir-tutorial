@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <title>RDLS Example-SMART-App</title>
+    <title>Example-SMART-App</title>
 
     <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
     <!--
@@ -12,6 +12,8 @@
     -->
   </head>
   <body>
+   
+      
     <div id='errors'>
     </div>
     <div id="loading" class="spinner">
@@ -20,7 +22,7 @@
       <div class="bounce3"></div>
     </div>
     <div id='holder' >
-      <h2>RDLS Example-SMART-App</h2>
+      <h2> Example-SMART-App</h2>
 
       <h2>Patient Resource</h2>
       <table>
@@ -83,6 +85,26 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <!-- start add -->
+     <script src='./src/js/filesaver.js'></script>
+     <script type="text/javascript">
+     var button = $('<button/>').html('click me').on('click', function() {
+        alert('alert on index file')   
+        var blob = new Blob(["Random text file ako!"], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "random.txt");
+        
+    })
+    $('body').append(button)
+      
+    </script> 
+    <!-- end add -->
+
+    <!-- start add -->
+    <script src="bundle.js" charset="utf-8"></script>
+    
+  <!-- start add -->
+  
     <script>
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success
