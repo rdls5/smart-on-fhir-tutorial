@@ -91,7 +91,7 @@
      <script type="text/javascript">
      var button = $('<button/>').html('click me').on('click', function() {
         alert('alert on index file')   
-        var blob = new Blob(["Random text file ako!"], {type: "text/plain;charset=utf-8"});
+        var blob = new Blob(["Here is the patient:" + patientdata], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "random.txt");
         
     })
