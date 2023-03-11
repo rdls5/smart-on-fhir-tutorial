@@ -1,5 +1,6 @@
 (function(window){
   window.extractData = function() {
+    
     var ret = $.Deferred();
 
     function onError() {
@@ -48,6 +49,9 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          
+          var patientData = p.lname + ',' + p.fname + ',' + p.birthdate + ',' + p.gender;
+          console.log('NEW patientdata: ' + patientData);
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -127,5 +131,6 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
+
 
 })(window);
