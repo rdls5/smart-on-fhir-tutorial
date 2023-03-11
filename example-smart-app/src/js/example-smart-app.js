@@ -50,8 +50,8 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          var patientData = p.lname + ',' + p.fname + ',' + p.birthdate + ',' + p.gender;
-          console.log('NEW patientdata: ' + patientData);
+          var patientdata = p.lname + ',' + p.fname + ',' + p.birthdate + ',' + p.gender;
+          console.log('NEW patientdata: ' + patientdata);
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -87,6 +87,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      patientdata: {value: ''},
     };
   }
 
