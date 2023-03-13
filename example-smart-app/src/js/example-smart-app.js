@@ -22,7 +22,7 @@
                       }
                     }
                   });
-        console.log('patient: ' + patient);
+        console.log('patient: ' + pt);
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
