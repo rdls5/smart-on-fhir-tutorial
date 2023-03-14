@@ -11,10 +11,9 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-         console.log('smart patient: ' + JSON.stringify(patient));
+         console.log('smart patient: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
         
         var pt = patient.read();
-        console.log('patient read: ' + JSON.stringify(pt));
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -55,9 +54,11 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+
+          console.log('default patient: ' + JSON.stringify(p));
           
           var patientdata = p.lname + ',' + p.fname + ',' + p.birthdate + ',' + p.gender;
-          console.log('NEW patientdata: ' + patientdata);
+          console.log('NEW patientdata: ' + patientdata); //manually extracted data
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -111,9 +112,9 @@
       }
       
     });
-
+     console.log('BP: ' + JSON.stringify(getQuantityValueAndUnit(formattedBPObservations[0])));
     return getQuantityValueAndUnit(formattedBPObservations[0]);
-    console.log('BP: ' + JSON.stringify(getQuantityValueAndUnit(formattedBPObservations[0])));
+   
   }
 
   function getQuantityValueAndUnit(ob) {
