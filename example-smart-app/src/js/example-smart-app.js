@@ -111,6 +111,7 @@
         observation.valueQuantity = BP.valueQuantity;
         formattedBPObservations.push(observation);
       }
+      console.log('BP: ' + JSON.stringify(BP));
     });
 
     return getQuantityValueAndUnit(formattedBPObservations[0]);
