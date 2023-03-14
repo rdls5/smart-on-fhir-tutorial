@@ -12,7 +12,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         console.log('smart own property: ' + smart.hasOwnProperty('patient'));
-        console.log('json parse: ' + JSON.parse(patient);
+        console.log('json parse: ' + JSON.parse(patient));
 
         
         var pt = patient.read();
