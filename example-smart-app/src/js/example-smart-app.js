@@ -11,6 +11,7 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
+        console.log('patient obj: ' + window.localStorage.getItem(patient));
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -22,7 +23,7 @@
                       }
                     }
                   });
-        console.log('patient obj: ' + pt);
+        
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
