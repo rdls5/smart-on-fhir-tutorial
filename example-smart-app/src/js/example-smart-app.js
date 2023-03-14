@@ -26,7 +26,7 @@
                   });
         
         console.log('smart own property: ' + smart.hasOwnProperty('patient'));
-        console.log('patient value: ' + pt.valueOf());
+        console.log('observation value: ' + obv);
 
         
         $.when(pt, obv).fail(onError);
