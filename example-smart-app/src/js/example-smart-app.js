@@ -11,9 +11,7 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        console.log('smart own property: ' + smart.hasOwnProperty('patient'));
-        console.log('json parse: ' + string(patient));
-
+        
         
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
@@ -26,6 +24,11 @@
                       }
                     }
                   });
+        
+        console.log('smart own property: ' + smart.hasOwnProperty('patient'));
+        console.log('smart own property: ' + smart.hasOwnProperty('pt'));
+        console.log('patient value: ' + pt);
+
         
         $.when(pt, obv).fail(onError);
 
