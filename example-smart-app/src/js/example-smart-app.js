@@ -27,9 +27,7 @@
                   });
         
         console.log('smart own property: ' + smart.hasOwnProperty('patient'));
-      
-        console.log('obv or value: ' + JSON.stringify($or));
-
+     
         
         $.when(pt, obv).fail(onError);
 
