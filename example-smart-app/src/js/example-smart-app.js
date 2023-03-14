@@ -55,7 +55,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
-          console.log('default patient: ' + JSON.stringify(p));
+          console.log('default patient: ' + JSON.stringify(p)); // get patient demographics
           
           var patientdata = p.lname + ',' + p.fname + ',' + p.birthdate + ',' + p.gender;
           console.log('NEW patientdata: ' + patientdata); //manually extracted data
