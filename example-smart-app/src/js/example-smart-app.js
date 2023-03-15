@@ -50,7 +50,7 @@
         
         $.when(pt, obv).fail(onError);
         
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv).done(function(patient, pat) {
           console.log('is it here first? PAT: ' + JSON.stringify(pat)); 
         )}
                              
