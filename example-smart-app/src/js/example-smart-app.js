@@ -52,7 +52,7 @@
         
         $.when(pt, obv).done(function(patient, obv) {
           console.log('is it here first? PAT: ' + JSON.stringify(pat)); 
-        }
+        )}
                              
         $.when(pt, obv).done(function(patient, obv) {
            console.log('is it here first? OBS: ' + JSON.stringify(obv)); 
