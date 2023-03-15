@@ -51,9 +51,10 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
+           console.log('is it here first? OBS: ' + JSON.stringify(obv)); 
           var byCodes = smart.byCodes(obv, 'code');
           
-           console.log('is it here? OBS: ' + JSON.stringify(obv)); 
+           console.log('is it here second? OBS: ' + JSON.stringify(obv)); 
           var gender = patient.gender;
 
           var fname = '';
@@ -79,7 +80,7 @@
 
       
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
-          console.log('patient resource: ' + JSON.stringify(pat)); // get patient resource
+          
         //  console.log('observation resource: ' + JSON.stringify(obv)); //get observation resource
           
           if (typeof systolicbp != 'undefined')  {
