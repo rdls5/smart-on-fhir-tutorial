@@ -11,9 +11,13 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-         console.log('smart patient: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
+        
+        console.log('smart.hasOwnProperty(): ' + smart.hasOwnProperty('patient'));
+        console.log('smart.patient: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
         
         var pt = patient.read();
+        
+        console.log('patient.read() : ' + JSON.stringify(pt));  
         
         //start add to retrieve pt resource
         var pat = smart.patient.api.fetchAll({
@@ -28,6 +32,8 @@
         
         //end 
         
+        console.log('smart.patient.api.fetchAll PAT: ' + JSON.stringify(pat)); // get patient demographics
+        
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -39,10 +45,9 @@
                     }
                   });
         
-        console.log('smart own property: ' + smart.hasOwnProperty('patient'));
+  
          
-          console.log('patient: ' + JSON.stringify(pat)); // get patient demographics
-          console.log('observation: ' + JSON.stringify(obv)); 
+          console.log('smart.patient.api.fetchAll OBS: ' + JSON.stringify(obv)); 
      
         
         $.when(pt, obv).fail(onError);
