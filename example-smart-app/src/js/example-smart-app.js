@@ -16,7 +16,7 @@
         
         var pt = patient.read();
         
-        console.log('patient.read() : ' + JSON.parse(pt));  
+        console.log('patient.read() : ' + pt);  
         
         //start add to retrieve pt resource
         var pat = smart.patient.api.fetchAll({
