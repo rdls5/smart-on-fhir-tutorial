@@ -16,7 +16,7 @@
         
         var pt = patient.read();
         
-        console.log('patient.read() : ' + String(pt.valueOf()));  
+        console.log('patient.read() : ' + pt.valueOf());  
         
         //start add to retrieve pt resource
         var pat = smart.patient.api.fetchAll({
@@ -49,7 +49,11 @@
          
         
         $.when(pt, obv).fail(onError);
-
+        
+        $.when(pt, obv).done(function(patient, obv) {
+          console.log('is it here first? PAT: ' + JSON.stringify(pat)); 
+        }
+                             
         $.when(pt, obv).done(function(patient, obv) {
            console.log('is it here first? OBS: ' + JSON.stringify(obv)); 
           var byCodes = smart.byCodes(obv, 'code');
