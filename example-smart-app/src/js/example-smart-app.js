@@ -47,7 +47,9 @@
   
          
           console.log('smart.patient.api.fetchAll OBS: ' + JSON.stringify(obv)); // (doesn't work)
-     
+               $.when(pt, pat).done(function(patient, pat) {
+                  console.log('is it here? - PAT: ' + JSON.stringify(pat)); // get patient resource
+               }
         
         $.when(pt, obv).fail(onError);
 
@@ -81,7 +83,7 @@
       
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
           console.log('patient resource: ' + JSON.stringify(pat)); // get patient resource
-          console.log('observation resource: ' + JSON.stringify(obv)); //get observation resource
+        //  console.log('observation resource: ' + JSON.stringify(obv)); //get observation resource
           
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
