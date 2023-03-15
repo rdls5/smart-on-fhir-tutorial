@@ -12,7 +12,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         
-        console.log('smart.patient - id: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
+        console.log('smart.patient - ID: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
         
         var pt = patient.read();
         
