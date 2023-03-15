@@ -40,7 +40,7 @@
                   });
         
         console.log('smart own property: ' + smart.hasOwnProperty('patient'));
-         console.log('default patient: ' + JSON.stringify(p)); // get patient demographics
+         
           console.log('patient: ' + JSON.stringify(pat)); // get patient demographics
           console.log('observation: ' + JSON.stringify(obv)); 
      
@@ -72,7 +72,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
-         
+         console.log('default patient: ' + JSON.stringify(p)); // get patient demographics
           
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
