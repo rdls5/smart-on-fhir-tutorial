@@ -47,16 +47,18 @@
   
          
           console.log('smart.patient.api.fetchAll OBS: ' + JSON.stringify(obv)); // (doesn't work)
-               $.when(pt, pat).done(function(patient, pat) {
-                  console.log('is it here? - PAT: ' + JSON.stringify(pat)); // get patient resource
-               }
+        
         
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           
-           console.log('is it here? OBS: ' + JSON.stringify(obv)); 
+          $.when(pt, pat).done(function(patient, pat) {
+          var byCodes = smart.byCodes(pat, 'code');
+          
+           console.log('is it here? PAT: ' + JSON.stringify(pat)); 
+            console.log('is it here? OBS: ' + JSON.stringify(obv)); 
           var gender = patient.gender;
 
           var fname = '';
