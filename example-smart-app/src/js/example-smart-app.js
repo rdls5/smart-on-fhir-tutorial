@@ -12,12 +12,11 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         
-        console.log('smart.hasOwnProperty(): ' + smart.hasOwnProperty('patient'));
-        console.log('smart.patient: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
+        console.log('smart.patient - id: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
         
         var pt = patient.read();
         
-        console.log('patient.read() : ' + JSON.stringify(pt));  
+        console.log('patient.read() : ' + JSON.parse(pt));  
         
         //start add to retrieve pt resource
         var pat = smart.patient.api.fetchAll({
