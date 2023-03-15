@@ -14,6 +14,20 @@
          console.log('smart patient: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
         
         var pt = patient.read();
+        
+        //start add to retrieve pt resource
+        var pat = smart.patient.api.fetchAll({
+                    type: 'Patient',
+                    query: {
+                      code: {
+                        $or: ['http://loinc.org|45392-8', 'http://loinc.org|45394-4',
+                              'http://loinc.org|21112-8', 'http://loinc.org|21840-4']
+                      }
+                    }
+                  });
+        
+        //end 
+        
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -56,12 +70,9 @@
           p.height = getQuantityValueAndUnit(height[0]);
 
           console.log('default patient: ' + JSON.stringify(p)); // get patient demographics
-          console.log('observation: ' + JSON.stringify(obv[0])); 
+          console.log('patient: ' + JSON.stringify(pat)); // get patient demographics
           console.log('observation: ' + JSON.stringify(obv)); 
           
-          var patientdata = p.lname + ',' + p.fname + ',' + p.birthdate + ',' + p.gender;
-          console.log('NEW patientdata: ' + patientdata); //manually extracted data
-
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
