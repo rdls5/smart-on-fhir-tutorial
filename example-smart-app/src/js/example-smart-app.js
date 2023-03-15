@@ -16,7 +16,7 @@
         
         var pt = patient.read();
         
-        console.log('patient.read() : ' + pt);  
+        console.log('patient.read() : ' + String(pt.valueOf()));  
         
         //start add to retrieve pt resource
         var pat = smart.patient.api.fetchAll({
@@ -31,7 +31,7 @@
         
         //end 
         
-        console.log('smart.patient.api.fetchAll PAT: ' + JSON.stringify(pat)); // get patient demographics (doesn't work)
+      //  console.log('smart.patient.api.fetchAll PAT: ' + JSON.stringify(pat)); // get patient demographics (doesn't work)
         
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -45,11 +45,8 @@
                   });
         
   
+      //    console.log('smart.patient.api.fetchAll OBS: ' + JSON.stringify(obv)); // (doesn't work)
          
-          console.log('smart.patient.api.fetchAll OBS: ' + JSON.stringify(obv)); // (doesn't work)
-               $.when(pt, pat).done(function(patient, pat) {
-                  console.log('is it here? - PAT: ' + JSON.stringify(pat)); // get patient resource
-               }
         
         $.when(pt, obv).fail(onError);
 
