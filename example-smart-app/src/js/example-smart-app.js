@@ -56,21 +56,7 @@
           console.log('is it here first? PAT: ' + JSON.stringify(pat)); 
        })
         
-         <!-- start add -->
-     <script src='./src/js/filesaver.js'></script>
-     <script type="text/javascript">
-       var patientdata = lname.value + fname.value;
-     var button = $('<button/>').html('click me').on('click', function() {
-        alert('alert on index file')   
-        var blob = new Blob(["Here is the patient:" + JSON.stringify(pat) ], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "random.txt");
-        
-    })
-    $('body').append(button)
-      
-    </script> 
-    <!-- end add -->
-        
+         
                              
         $.when(pt, obv).done(function(patient, obv) {
            console.log('is it here first? OBS: ' + JSON.stringify(obv)); 
