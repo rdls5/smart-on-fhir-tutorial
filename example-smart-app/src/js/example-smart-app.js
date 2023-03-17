@@ -32,8 +32,6 @@
         
         //end 
         
-   
-        
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -45,19 +43,13 @@
                     }
                   });
         
-  
-
-         
-        
         $.when(pt, obv).fail(onError);
         
         //retrieve pt json file
         $.when(pt, pat).done(function(patient, pat) {
           console.log('is it here first? PAT: ' + JSON.stringify(pat)); 
        })
-        
-         
-                             
+                            
         $.when(pt, obv).done(function(patient, obv) {
            console.log('is it here first? OBS: ' + JSON.stringify(obv)); 
           var byCodes = smart.byCodes(obv, 'code');
@@ -86,7 +78,6 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
 
-      
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
           
         //  console.log('observation resource: ' + JSON.stringify(obv)); //get observation resource
@@ -173,6 +164,5 @@
     $('#hdl').html(p.hdl);
     $('#ptdata').html(ptdata);
   };
-
 
 })(window);
