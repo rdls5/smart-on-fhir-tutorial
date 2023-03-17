@@ -32,7 +32,7 @@
         
         //end 
         
-      //  console.log('smart.patient.api.fetchAll PAT: ' + JSON.stringify(pat)); // get patient demographics (doesn't work)
+   
         
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
@@ -46,7 +46,7 @@
                   });
         
   
-      //    console.log('smart.patient.api.fetchAll OBS: ' + JSON.stringify(obv)); // (doesn't work)
+
          
         
         $.when(pt, obv).fail(onError);
@@ -171,6 +171,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#ptdata').html(ptdata);
   };
 
 
