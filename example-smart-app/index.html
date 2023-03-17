@@ -68,7 +68,7 @@
         </tr>
         <tr>
           <th>Patient Data</th>
-          <td id='lname', 'fname'></td>
+          <td id='lname'></td>
         </tr>
       </table>
     </div>
@@ -96,7 +96,7 @@
        var patientdata = lname.value + fname.value;
      var button = $('<button/>').html('click me').on('click', function() {
         alert('alert on index file')   
-        var blob = new Blob(["Here is the patient:" + lname.valueOf() + ' ' + fname.valueOf()+ ' ' + ptdata.valueOf() ], {type: "text/plain;charset=utf-8"});
+        var blob = new Blob(["Here is the patient:" + lname.valueOf() + ' ' + fname.valueOf()], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "random.txt");
         
     })
