@@ -12,7 +12,8 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         
-        console.log('smart.patient - ID: ' + JSON.stringify(patient));   //retrieves the pt id in JSON format
+        var ptdata = JSON.stringify(patient);
+        console.log('smart.patient - ID: ' + ptdata);   //retrieves the pt id in JSON format
         
         var pt = patient.read();
         
@@ -138,7 +139,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      patientdata: {value: ''},
+      ptdata: {value: ''},
     };
   }
 
