@@ -53,7 +53,7 @@
         $.when(pt, pat).done(function(patient, pat) {
           console.log('PATIENT RESOURCE: ' + '\n' + JSON.stringify(pat)); 
           var patientresource = JSON.stringify(pat);
-          // console.log('PATIENT RESOURCE 1: ' + patientresource);
+          // console.log('PATIENT RESOURCE: ' + patientresource);
        })
          
           
@@ -81,11 +81,11 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.ptdata = JSON.stringify(p);
-
+          
           
            console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json. this line works
-          console.log('PATIENT RESOURCE PAT: ' + '\n'+ JSON.stringify(pat)); // get patient demographics json. this line works
+          console.log('PATIENT RESOURCE PAT: ' + '\n'+ JSON.stringify(patientresource)); 
+          console.log('PATIENT OBSERVATION OBV: ' + '\n'+ JSON.stringify(obv)); 
           
       
           
