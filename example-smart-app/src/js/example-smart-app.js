@@ -78,9 +78,10 @@
           p.height = getQuantityValueAndUnit(height[0]);
           p.ptdata = JSON.stringify(pat);
 
+          console.log('p.ptdata: ' + p.ptdata);
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
           
-        //  console.log('observation resource: ' + JSON.stringify(obv)); //get observation resource
+      
           
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -162,7 +163,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#ptdata').html(JSON.stringify(pat));
+    $('#ptdata').html(JSON.stringify(p.ptdata));
   };
 
 })(window);
