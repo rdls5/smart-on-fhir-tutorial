@@ -162,7 +162,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#ptdata').html(p.ptdata);
+    $('#ptdata').html(JSON.stringify(pat));
   };
 
 })(window);
