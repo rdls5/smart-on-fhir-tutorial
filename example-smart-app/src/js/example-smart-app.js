@@ -47,11 +47,11 @@
         
         //retrieve pt json file
         $.when(pt, pat).done(function(patient, pat) {
-          console.log('is it here first? PAT: ' + JSON.stringify(pat)); 
+          console.log('PATIENT RESOURCE: ' + '\n' + JSON.stringify(pat)); 
        })
                             
         $.when(pt, obv).done(function(patient, obv) {
-           console.log('is it here first? OBS: ' + JSON.stringify(obv)); 
+           console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
           var byCodes = smart.byCodes(obv, 'code');
          
           var gender = patient.gender;
