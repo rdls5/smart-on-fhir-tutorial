@@ -53,15 +53,15 @@
         $.when(pt, pat).done(function(patient, pat) {
           console.log('PATIENT RESOURCE: ' + '\n' + JSON.stringify(pat)); 
           var patientresource = JSON.stringify(pat);
-          console.log('PATIENT RESOURCE 1: ' + '\n' + patientresource);
+          console.log('patient resource: ' + patientresource);
        })
           var byCodes = smart.byCodes(obv, 'code');
-         
+          console.log('byCodes: ' + byCodes);            
           var gender = patient.gender;
         console.log('gender: ' + gender);            
           var fname = '';
           var lname = '';
-console.log('PATIENT RESOURCE 2: ' + '\n' + patientresource);
+
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
@@ -79,7 +79,7 @@ console.log('PATIENT RESOURCE 2: ' + '\n' + patientresource);
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-         // p.ptdata = patientresource;
+          p.ptdata = patientresource;
 
           console.log('p.ptdata: ' + p.ptdata);
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
@@ -166,7 +166,7 @@ console.log('PATIENT RESOURCE 2: ' + '\n' + patientresource);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#ptdata').html(p.ptdata);
+    $('#ptdata').html(JSON.stringify(p.ptdata));
   };
 
 })(window);
