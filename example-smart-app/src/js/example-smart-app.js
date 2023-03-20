@@ -84,7 +84,7 @@
           
           
            console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json. this line works
-        console.log('PATIENT RESOURCE PAT: ' + '\n'+ JSON.stringify(defaultPatient()); 
+        console.log('PATIENT RESOURCE PAT: ' + '\n'+ JSON.stringify(defaultPatient())); 
           console.log('PATIENT OBSERVATION OBV: ' + '\n'+ JSON.stringify(obv)); 
           
       
