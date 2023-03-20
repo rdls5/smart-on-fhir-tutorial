@@ -52,11 +52,13 @@
            //retrieve pt json file
         $.when(pt, pat).done(function(patient, pat) {
           console.log('PATIENT RESOURCE: ' + '\n' + JSON.stringify(pat)); 
+          var patientresource = JSON.stringify(pat);
+          console.log('patient resource: ' + patientresource);
        })
           var byCodes = smart.byCodes(obv, 'code');
-         
+          console.log('byCodes: ' + byCodes);            
           var gender = patient.gender;
-
+        console.log('gender: ' + gender);            
           var fname = '';
           var lname = '';
 
@@ -77,7 +79,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.ptdata = JSON.stringify(pat);
+          p.ptdata = patientresource;
 
           console.log('p.ptdata: ' + p.ptdata);
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
@@ -164,7 +166,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#ptdata').html(JSON.stringify(p.ptdata));
+    $('#ptdata').html(p.ptdata);
   };
 
 })(window);
