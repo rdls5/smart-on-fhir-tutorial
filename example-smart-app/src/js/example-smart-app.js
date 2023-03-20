@@ -81,7 +81,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.ptdata = JSON.stringify(pat);
+          p.ptdata = JSON.stringify(obv);
 
           console.log('OBSERVATION DATA 2: ' + '\n' + JSON.stringify(obv));
            console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json
