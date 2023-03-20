@@ -89,27 +89,8 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
-    <!-- start add -->
-     <script src='./src/js/filesaver.js'></script>
-     <script type="text/javascript">
-       var patientdata = lname.value + fname.value;
-     var button = $('<button/>').html('click me').on('click', function() {
-        alert('alert on index file')   
-        var blob = new Blob(["Here is the patient:" + lname.valueOf() + ' ' + fname.valueOf()], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, "random.txt");
-        
-    })
-    $('body').append(button)
-      
-    </script> 
-    <!-- end add -->
-
-    <!-- start add -->
     <script src="bundle.js" charset="utf-8"></script>
     
-  <!-- start add -->
-  
     <script>
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success
@@ -124,5 +105,21 @@
         }
       );
     </script>
+     <!-- start add -->
+     <script src='./src/js/filesaver.js'></script>
+     <script type="text/javascript">
+       var patientdata = lname.value + fname.value;
+     var button = $('<button/>').html('click me').on('click', function() {
+        alert('alert on index file')   
+        var blob = new Blob(["Here is the patient:" + lname.valueOf() + ' ' + fname.valueOf()], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "random.txt");
+        
+    })
+    $('body').append(button)
+      
+    </script> 
+    <!-- end add -->
+
+   
   </body>
 </html>
