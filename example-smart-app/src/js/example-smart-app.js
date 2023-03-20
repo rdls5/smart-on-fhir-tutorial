@@ -84,7 +84,8 @@
           p.ptdata = JSON.stringify(p);
 
           
-           console.log('default patient: ' + JSON.stringify(p)); // get patient demographics json. this line works
+           console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json. this line works
+          console.log('PATIENT RESOURCE PAT: ' + '\n'+ JSON.stringify(pat)); // get patient demographics json. this line works
           
       
           
