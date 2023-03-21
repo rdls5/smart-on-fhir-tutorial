@@ -48,7 +48,8 @@
         
         //get patient resource in JSON format
         $.when(pt, pat).done(function(patient, pat) {
-          var ptres= JSON.stringify(pat);
+          var pr = defaultResource();
+          pr.ptres = JSON.stringify(pat);
           console.log('PATIENT RESOURCE: ' + '\n' + ptres);
           
           
@@ -129,6 +130,14 @@
     };
   }
 
+  //added
+  function defaultResource() {
+    return {
+      ptres: {value: ''},
+    };
+  }
+  //end
+  
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
@@ -173,11 +182,11 @@
     $('#hdl').html(p.hdl);
   };
   
-  window.drawVisualizationPatient = function(ptres) {
+  window.drawVisualizationPatient = function(pr) {
     $('#holder').show();
     $('#loading').hide();
     $('#ptres').html(ptres);
-    console.log('PATIENT RES FUNCTION: ' + '\n' + ptres);
+    console.log('PATIENT RES FUNCTION: ' + '\n' + pr);
   };
 
 
