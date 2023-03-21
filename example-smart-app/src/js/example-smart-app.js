@@ -51,9 +51,12 @@
           var pr = defaultResource();
           pr.ptres = JSON.stringify(pat);
           console.log('PATIENT RESOURCE: ' + '\n' + pr.ptres);
-          ret.resolve(pr);
+          
+          
        });
         //end
+       
+       
                             
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
@@ -183,7 +186,7 @@
     $('#holder').show();
     $('#loading').hide();
     $('#ptres').html(ptres);
-    console.log('PATIENT RES FUNCTION: ' + '\n' + pr.ptres);
+    console.log('PATIENT RES FUNCTION: ' + '\n' + pr);
   };
 
 
