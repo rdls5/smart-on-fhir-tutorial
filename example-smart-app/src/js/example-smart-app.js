@@ -185,8 +185,8 @@
   window.drawVisualizationPatient = function(pr) {
     $('#holder').show();
     $('#loading').hide();
-    $('#ptres').html(ptres);
-    console.log('PATIENT RES FUNCTION: ' + '\n' + pr);
+    $('#ptres').html(pr.ptres);
+    console.log('PATIENT RES FUNCTION: ' + '\n' + pr.ptres);
   };
 
 
