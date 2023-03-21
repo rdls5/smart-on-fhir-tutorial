@@ -50,7 +50,7 @@
         $.when(pt, pat).done(function(patient, pat) {
           var pr = defaultResource();
           pr.ptres = JSON.stringify(pat);
-          console.log('PATIENT RESOURCE: ' + '\n' + ptres);
+          console.log('PATIENT RESOURCE: ' + '\n' + pr.ptres);
           
           
        });
