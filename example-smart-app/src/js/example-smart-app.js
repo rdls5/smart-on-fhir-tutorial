@@ -17,7 +17,6 @@
         
         var pt = patient.read();
       
-        
         //retrieve patient resource
         var pat = smart.patient.api.fetchAll({
                     type: 'Patient',
@@ -28,7 +27,6 @@
                       }
                     }
                   });
-        
         //end 
         
         var obv = smart.patient.api.fetchAll({
@@ -50,23 +48,16 @@
         $.when(pt, pat).done(function(patient, pat) {
           var pr = defaultResource();
           pr.ptres = JSON.stringify(pat);
-          console.log('PATIENT RESOURCE: ' + '\n' + pr.ptres);
-          
-          
+          console.log('PATIENT RESOURCE: ' + '\n' + pr.ptres);          
        });
         //end
-       
-       
-                            
+                        
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
            //retrieve pt json file
      
-          
           var byCodes = smart.byCodes(obv, 'code');
-         
           var gender = patient.gender;
-
           var fname = '';
           var lname = '';
 
@@ -92,7 +83,6 @@
           
           console.log('DEFAULT PATIENT BASIC INFO: ' + '\n' + JSON.stringify(p)); // get patient demographics json
       
-          
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -181,7 +171,6 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    
   };
   
   window.drawVisualizationPatient = function(pr) {
@@ -189,8 +178,5 @@
     $('#holder').show();
     $('#loading').hide();
     $('#pr.ptres').html(pr.ptres);
-    
   };
-
-
 })(window);
