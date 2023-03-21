@@ -112,8 +112,9 @@
      <script>
       extractData().then(
         function(pr) {
-          drawVisualizationPatient(pr);
           console.log('drawVisualizationPatient(pr) function');
+          drawVisualizationPatient(pr);
+          
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
@@ -121,9 +122,7 @@
           $('#loading').hide();
           $('#errors').html('<p> Failed to call FHIR Service PTRES </p>');
         }
-      );
-    </script>
-    
+     
      <!-- start add -->
      <script src='./src/js/filesaver.js'></script>
      <script type="text/javascript">
