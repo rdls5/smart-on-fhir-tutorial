@@ -90,7 +90,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json
+          console.log('DEFAULT PATIENT BASIC INFO: ' + '\n' + JSON.stringify(p)); // get patient demographics json
       
           
           if (typeof systolicbp != 'undefined')  {
