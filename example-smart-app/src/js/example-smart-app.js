@@ -169,6 +169,7 @@
   }
 
   window.drawVisualization = function(p) {
+    console.log('fname: ' + p.fname);
     $('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
@@ -180,13 +181,15 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    
   };
   
   window.drawVisualizationPatient = function(pr) {
+    console.log('PATIENT RES FUNCTION: ' + '\n' + pr.ptres);
     $('#holder').show();
     $('#loading').hide();
-    $('#ptres').html(pr.ptres);
-    console.log('PATIENT RES FUNCTION: ' + '\n' + pr.ptres);
+    $('#pr.ptres').html(pr.ptres);
+    
   };
 
 
