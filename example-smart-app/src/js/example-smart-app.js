@@ -54,7 +54,8 @@
           
        })
         //end
-        */
+       
+       */
                             
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
