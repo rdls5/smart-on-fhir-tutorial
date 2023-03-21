@@ -16,10 +16,9 @@
         console.log('smart.patient - ID: ' + ptdata);   //retrieves the pt id in JSON format
         
         var pt = patient.read();
+      
         
-
-        
-        //start add to retrieve pt resource
+        //retrieve patient resource
         var pat = smart.patient.api.fetchAll({
                     type: 'Patient',
                     query: {
@@ -43,15 +42,18 @@
                     }
                   });
         
+        $.when(pt, pat).fail(onError);
+        
         $.when(pt, obv).fail(onError);
         
-          $.when(pt, pat).done(function(patient, pat) {
-          console.log('PATIENT RESOURCE: ' + '\n' + JSON.stringify(pat)); 
-          var patientresource = JSON.stringify(pat);
-          // console.log('PATIENT RESOURCE: ' + patientresource);
+        //get patient resource in JSON format
+        $.when(pt, pat).done(function(patient, pat) {
+          var ptres= JSON.stringify(pat);
+          console.log('PATIENT RESOURCE: ' + '\n' + patientresource);
+          
+          
        })
-         
-        
+        //end
                             
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
@@ -168,5 +170,13 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
+  
+  window.drawVisualizationPatient = function(ptres) {
+    $('#holder').show();
+    $('#loading').hide();
+    $('#ptres').html(ptres);
+    console.log('PATIENT RES FUNCTION: ' + '\n' + ptres);
+  };
+
 
 })(window);
