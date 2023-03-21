@@ -98,9 +98,11 @@
         //Display Patient Demographics and Observations if extractData was success
         function(p) {
           drawVisualization(p);
+          console.log('drawVisualization(p) function');
         },
         function(ptres) {
           drawVisualizationPatient(ptres);
+          console.log('drawVisualizationPatient(ptres) function');
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
