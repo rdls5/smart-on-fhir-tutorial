@@ -112,8 +112,8 @@
      <script>
       extractData().then(
         function(pr) {
-          drawVisualizationPatient(ptres);
-          console.log('drawVisualizationPatient(ptres) function');
+          drawVisualizationPatient(pr);
+          console.log('drawVisualizationPatient(pr) function');
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
@@ -123,6 +123,7 @@
         }
       );
     </script>
+    
      <!-- start add -->
      <script src='./src/js/filesaver.js'></script>
      <script type="text/javascript">
