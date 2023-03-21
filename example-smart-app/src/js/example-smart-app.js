@@ -51,7 +51,7 @@
           var ptres= ptresource() {
             return (JSON.stringify(pat)); 
           console.log('PATIENT RESOURCE: ' + '\n' + ptres);
-          
+          }
           
        })
         //end
