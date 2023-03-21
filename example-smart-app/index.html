@@ -112,7 +112,6 @@
      <script>
       extractData().then(
         function(pr) {
-         
           drawVisualizationPatient(pr);
            console.log('drawVisualizationPatient(pr) function');
         },
@@ -120,10 +119,11 @@
         //Display 'Failed to call FHIR Service' if extractData failed
         function() {
           $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service PTRES </p>');
+          $('#errors').html('<p> Failed to call FHIR Service PT RESOURCE </p>');
         }
-        );
+       );
     </script>
+    
      <!-- start add -->
      <script src='./src/js/filesaver.js'></script>
      <script type="text/javascript">
@@ -131,7 +131,6 @@
         alert('alert on index file')   
         var blob = new Blob(["Here is the patient:"], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "random.txt");
-        
     })
     $('body').append(button)
       
