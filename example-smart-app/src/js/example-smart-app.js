@@ -88,7 +88,7 @@
           p.height = getQuantityValueAndUnit(height[0]);
           
           console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json
-          console.log('PATIENT OBSERVATION OBV: ' + '\n'+ obvstring); 
+      
           
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
