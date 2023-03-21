@@ -45,17 +45,18 @@
         
         $.when(pt, obv).fail(onError);
         
-       
-                            
-        $.when(pt, obv).done(function(patient, obv) {
-           console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
-           //retrieve pt json file
-        $.when(pt, pat).done(function(patient, pat) {
+          $.when(pt, pat).done(function(patient, pat) {
           console.log('PATIENT RESOURCE: ' + '\n' + JSON.stringify(pat)); 
           var patientresource = JSON.stringify(pat);
           // console.log('PATIENT RESOURCE: ' + patientresource);
        })
          
+        
+                            
+        $.when(pt, obv).done(function(patient, obv) {
+           console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
+           //retrieve pt json file
+     
           
           var byCodes = smart.byCodes(obv, 'code');
          
@@ -121,7 +122,6 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      obvstring: {value: ''},
     };
   }
 
@@ -167,7 +167,6 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#ptdata').html(obvstring);
   };
 
 })(window);
