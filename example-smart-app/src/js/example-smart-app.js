@@ -74,15 +74,16 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          var obvstring = JSON.stringify(obv);
 
           var p = defaultPatient();
+          
           p.birthdate = patient.birthDate;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          var obvstring = JSON.stringify(obv);
           console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json
           console.log('PATIENT OBSERVATION OBV: ' + '\n'+ obvstring); 
           
@@ -120,6 +121,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      obvstring: {value: ''},
     };
   }
 
