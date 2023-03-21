@@ -49,8 +49,9 @@
         //get patient resource in JSON format
         $.when(pt, pat).done(function(patient, pat) {
           var ptres= ptresource() {
+                  console.log('PATIENT RESOURCE 1: ' + '\n' + ptres);
             return (JSON.stringify(pat)); 
-          console.log('PATIENT RESOURCE: ' + '\n' + ptres);
+    
           }
           
        })
