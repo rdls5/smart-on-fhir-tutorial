@@ -94,7 +94,7 @@
     <script src="bundle.js" charset="utf-8"></script>
     
     <script>
-      extractData().then(
+      extractData().then( 
         //Display Patient Demographics and Observations if extractData was success
         function(p) {
           drawVisualization(p);
@@ -111,7 +111,7 @@
     
      <script>
       extractData().then(
-        function(ptres) {
+        function(pr) {
           drawVisualizationPatient(ptres);
           console.log('drawVisualizationPatient(ptres) function');
         },
