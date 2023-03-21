@@ -82,12 +82,9 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           
-          
-           console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json. this line works
-        console.log('PATIENT RESOURCE PAT: ' + '\n'+ JSON.stringify(defaultPatient())); 
-          console.log('PATIENT OBSERVATION OBV: ' + '\n'+ JSON.stringify(obv)); 
-          
-      
+          var obvstring = JSON.stringify(obv);
+          console.log('DEFAULT PATIENT P: ' + '\n' + JSON.stringify(p)); // get patient demographics json
+          console.log('PATIENT OBSERVATION OBV: ' + '\n'+ obvstring); 
           
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -123,7 +120,6 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      ptdata: {value: ''},
     };
   }
 
@@ -169,7 +165,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#ptdata').html(JSON.stringify(p));
+    $('#ptdata').html(obvstring);
   };
 
 })(window);
