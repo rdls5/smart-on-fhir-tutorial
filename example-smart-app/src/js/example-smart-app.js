@@ -45,18 +45,23 @@
         $.when(pt, obv).fail(onError);
         
         //get patient resource in JSON format
-        function defaultResource() {  
+        
           $.when(pt, pat).done(function(patient, pat) {
             var pr = JSON.stringify(pat);
             console.log('PATIENT RESOURCE: ' + '\n' + pr);          
-            return pr;
+            var dr = defaultResource();
+            dr.ptres = ptres;
+            console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
           });
-        }
+        
        //end
-         
-        var pt = defaultResource();
-        pt.pr = pr;
-        console.log('default resource: ' + pr);
+        
+         function defaultResource(){
+            return {
+              ptres: {value: ''},
+            };
+         };
+        
         
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
