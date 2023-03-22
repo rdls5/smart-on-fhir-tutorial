@@ -50,7 +50,7 @@
             var pr = JSON.stringify(pat);
             console.log('PATIENT RESOURCE: ' + '\n' + pr);          
             var dr = defaultResource();
-            dr.ptres = ptres;
+            dr.ptres = pr;
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
           });
         
