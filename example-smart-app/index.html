@@ -68,10 +68,6 @@
           <th>Patient Data</th>
           <td id='lname'></td>
         </tr>
-          <tr>
-          <th>Patient Resource</th>
-          <td id='ptres'></td>
-        </tr>
       </table>
     </div>
     <!-- Required JS files to enable this page to embed within an MPage -->
@@ -98,7 +94,7 @@
         //Display Patient Demographics and Observations if extractData was success
         function(p) {
           drawVisualization(p);
-          console.log('drawVisualization function');
+          console.log('drawVisualization function index');
         },
       
         //Display 'Failed to call FHIR Service' if extractData failed
