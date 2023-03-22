@@ -52,7 +52,7 @@
             var dr = defaultResource();
             dr.ptres = ptres;
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
-            return ptres;
+             ret.resolve(dr);
           });
         }
         
