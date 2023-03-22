@@ -88,14 +88,14 @@
     <script src="bundle.js" charset="utf-8"></script>
 	  
      <script>
-      var ptres = '';     	     
+      var ptresource = '';     	     
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success 
 	 function(p) {
-	     console.log('before calling drawVisualization function');
+	   
              drawVisualization(p);
-	      ptres = p.ptres;
-	     console.log('after calling drawVisualization function');
+	      ptresource = p.ptres;
+	     console.log('patient resource inside EXTRACTDATA function: ' + '\n' + ptresource);
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
@@ -104,6 +104,7 @@
           $('#errors').html('<p> Failed to call FHIR Service ERROR!!!</p>');
         }
       );
+console.log('patient resource outside EXTRACTDATA function: ' + '\n' + ptresource);
     </script>
 
       <!-- start add -->
