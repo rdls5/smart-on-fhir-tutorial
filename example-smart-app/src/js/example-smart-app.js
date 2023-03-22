@@ -170,9 +170,4 @@
     $('#ptres').html(p.ptres);
   };
   
- /*  window.drawVisualization2 = function(dr) {
-     console.log('ptres result: ' + '\n' + dr.ptres);
-     $('#ptres').html(dr.ptres);
-  };*/
-  
 })(window);
