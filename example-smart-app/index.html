@@ -88,10 +88,9 @@
     <script src="bundle.js" charset="utf-8"></script>
 	  
      <script>
+      var ptres = '';     	     
       extractData().then(
-        //Display Patient Demographics and Observations if extractData was success
-      
-	 var ptres = '';     
+        //Display Patient Demographics and Observations if extractData was success 
 	 function(p) {
 	     console.log('before calling drawVisualization function');
              drawVisualization(p);
