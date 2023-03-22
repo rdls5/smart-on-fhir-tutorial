@@ -43,18 +43,24 @@
         $.when(pt, pat).fail(onError);
         
         $.when(pt, obv).fail(onError);
-                        
-        $.when(pt, obv).done(function(patient, obv) {
-           console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
-           //retrieve pt json file
-          
-          //get patient resource in JSON format
+        
+        //get patient resource in JSON format
+        function defaultResource() {  
           $.when(pt, pat).done(function(patient, pat) {
             var pr = JSON.stringify(pat);
             console.log('PATIENT RESOURCE: ' + '\n' + pr);          
+            return pr;
           });
+        }
        //end
-     
+         
+        defaultResource();
+        console.log('default resource: ' + pr);
+        
+        $.when(pt, obv).done(function(patient, obv) {
+           console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
+           //retrieve pt json file
+        
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           var fname = '';
@@ -70,8 +76,7 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
-          var obvstring = JSON.stringify(obv);
-
+         
           var p = defaultPatient();
           
           p.birthdate = patient.birthDate;
@@ -79,8 +84,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.pr = JSON.stringify(pr);
-          console.log('PATIENT RESOURCE as part of function: ' + '\n' + pr);          
+         
           console.log('DEFAULT PATIENT BASIC INFO: ' + '\n' + JSON.stringify(p)); // get patient demographics json
       
           if (typeof systolicbp != 'undefined')  {
@@ -117,12 +121,9 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      pr: {value: ''},
     };
   }
 
-
-  
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
     BPObservations.forEach(function(observation){
@@ -165,7 +166,5 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#pr').html(p.pr);
   };
- 
 })(window);
