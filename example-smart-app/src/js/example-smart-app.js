@@ -51,7 +51,7 @@
             console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
             var dr = defaultResource();
             dr.ptres = ptres;
-            console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
+            //console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
              ret.resolve(dr);
           });
        
@@ -178,7 +178,7 @@
    window.drawVisualization2 = function(dr) {
   
     $('#ptres').html(dr.ptres);
-       console.log('ptres: ' + dr.ptres);
+       console.log('ptres on  drawvisualization2: ' + dr.ptres);
   };
   
 })(window);
