@@ -52,7 +52,7 @@
           $.when(pt, pat).done(function(patient, pat) {
             ptres = JSON.stringify(pat);
             console.log('PATIENT RESOURCE INSIDE the function: ' + '\n' + ptres);          
-            ret.resolve(ptres);
+            //ret.resolve(ptres);
           });
         
           console.log('PATIENT RESOURCE OUTSIDE the function: ' + '\n' + ptres);          
