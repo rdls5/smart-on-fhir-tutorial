@@ -45,17 +45,14 @@
         $.when(pt, obv).fail(onError);
         
         //get patient resource in JSON format
-       
           $.when(pt, pat).done(function(patient, pat) {
             var ptres = JSON.stringify(pat);
             console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
             var dr = defaultResource();
             dr.ptres = ptres;
-            //console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
+            console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
              ret.resolve(dr);
           });
-       
-        
        //end
         
          function defaultResource(){
@@ -63,7 +60,6 @@
               ptres: {value: ''},
             };
          };
-        
         
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
@@ -161,7 +157,6 @@
   }
 
   window.drawVisualization = function(p) {
-    console.log('fname in function: ' + p.fname);
     $('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
@@ -173,7 +168,9 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+     console.log('fname in function: ' + p.fname);
   };
+  
   window.drawVisualization2 = function(dr) {
     $('#ptres').html(dr.ptres);
     console.log('ptres on  drawvisualization2: ' + dr.ptres);
