@@ -161,7 +161,7 @@
   }
 
   window.drawVisualization = function(p) {
-    console.log('fname: ' + p.fname);
+    console.log('fname function: ' + p.fname);
     $('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
