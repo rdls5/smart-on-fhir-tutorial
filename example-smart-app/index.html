@@ -65,11 +65,6 @@
         <tr>
           <th>HDL:</th>
           <td id='hdl'></td>
-        </tr>
-	  <tr>
-          <th>Patient Resource:</th>
-          <td id='ptres'></td>
-        </tr>
       </table>
     </div>
 	
@@ -96,9 +91,11 @@
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success
       
+	 var ptres = '';     
 	 function(p) {
 	     console.log('before calling drawVisualization function');
              drawVisualization(p);
+	      ptres = p.ptres;
 	     console.log('after calling drawVisualization function');
         },
 
@@ -115,7 +112,7 @@
      <script type="text/javascript">
      var button = $('<button/>').html('click me').on('click', function() {
         alert('Saving file...')   
-        var blob = new Blob([ptdata], {type: "text/plain;charset=utf-8"});
+        var blob = new Blob([ptres], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "random.txt");
         
     })
