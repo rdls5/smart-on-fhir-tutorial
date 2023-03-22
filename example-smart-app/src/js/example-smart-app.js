@@ -175,7 +175,7 @@
     $('#hdl').html(p.hdl);
   };
   
-   window.drawVisualization = function(dr) {
+   window.drawVisualization2 = function(dr) {
     $('#ptres').html(dr.ptres);
      console.log('ptres: ' + dr.ptres);
   };
