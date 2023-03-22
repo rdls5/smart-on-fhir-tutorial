@@ -48,28 +48,16 @@
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
           
             //***get patient resource in JSON format
+          var ptres = '';
           $.when(pt, pat).done(function(patient, pat) {
-            var pr = JSON.stringify(pat);
-           // console.log('PATIENT RESOURCE: ' + '\n' + pr);          
-            var dr = defaultResource();
-            dr.ptres = pr;
-            console.log('PATIENT RESOURCE INSIDE the function: ' + '\n' + dr.ptres);          
-            ret.resolve(dr);
+            ptres = JSON.stringify(pat);
+            console.log('PATIENT RESOURCE INSIDE the function: ' + '\n' + ptres);          
+            ret.resolve(ptres);
           });
         
-          //function
-             
-         function defaultResource(){
-            return {
-              ptres: {value: ''},
-            };
-         };
-          
-          console.log('PATIENT RESOURCE OUTSIDE the function: ' + '\n' + dr.ptres);          
+          console.log('PATIENT RESOURCE OUTSIDE the function: ' + '\n' + ptres);          
           //***end
-        
-          
-          
+            
            //retrieve pt json file
         
           var byCodes = smart.byCodes(obv, 'code');
@@ -95,7 +83,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.ptres = dr.ptres;
+          p.ptres = ptres;
          
           console.log('DEFAULT PATIENT BASIC INFO: ' + '\n' + JSON.stringify(p)); // get patient demographics json
       
