@@ -45,7 +45,7 @@
         $.when(pt, obv).fail(onError);
         
         //get patient resource in JSON format
-        function getPatient() {
+       
           $.when(pt, pat).done(function(patient, pat) {
             var ptres = JSON.stringify(pat);
             console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
@@ -54,7 +54,7 @@
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
              ret.resolve(dr);
           });
-        }
+       
         
        //end
         
