@@ -161,7 +161,7 @@
   }
 
   window.drawVisualization = function(p) {
-    console.log('fname function: ' + p.fname);
+    console.log('fname: ' + p.fname);
     $('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
@@ -176,7 +176,7 @@
   };
   
    window.drawVisualization2 = function(dr) {
-     console.log('ptres result: ' + dr.ptres);
+     console.log('ptres result: ' + '\n' + dr.ptres);
      $('#ptres').html(dr.ptres);
   };
 })(window);
