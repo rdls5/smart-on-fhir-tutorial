@@ -160,7 +160,7 @@
     }
   }
 
-  window.drawVisualization = function(p) {
+  window.drawVisualization = function(p,dr) {
     console.log('fname: ' + p.fname);
     $('#holder').show();
     $('#loading').hide();
@@ -173,12 +173,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-  };
-  
-   window.drawVisualization2 = function(dr) {
-  
     $('#ptres').html(dr.ptres);
-       console.log('ptres on  drawvisualization2: ' + dr.ptres);
+    console.log('ptres on  drawvisualization2: ' + dr.ptres);
   };
-  
 })(window);
