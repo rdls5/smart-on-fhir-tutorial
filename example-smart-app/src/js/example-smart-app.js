@@ -45,14 +45,16 @@
         $.when(pt, obv).fail(onError);
         
         //get patient resource in JSON format
-        
+        function getPatient() {
           $.when(pt, pat).done(function(patient, pat) {
             var ptres = JSON.stringify(pat);
             console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
             var dr = defaultResource();
             dr.ptres = ptres;
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
+            return ptres;
           });
+        }
         
        //end
         
@@ -174,8 +176,9 @@
   };
   
    window.drawVisualization2 = function(dr) {
-    console.log('ptres: ' + dr.ptres);
+  
     $('#ptres').html(dr.ptres);
+       console.log('ptres: ' + dr.ptres);
   };
   
 })(window);
