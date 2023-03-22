@@ -97,8 +97,8 @@
     <script>
       extractData().then( 
         //Display Patient Demographics and Observations if extractData was success
-        function(dr) {
-          drawVisualization2(dr);
+        function(getPatient) {
+          getPatient(ptres);
           console.log('drawVisualization2 function');
         },
        
