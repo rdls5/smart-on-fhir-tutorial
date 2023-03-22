@@ -174,7 +174,7 @@
   };
   
   window.drawVisualizationPatient = function(pr) {
-    console.log('PATIENT RESource FUNCTION: ' + '\n' + pr);
+    console.log('PATIENT RESource FUNCTION: ' + '\n' + JSON.Stringify(pr));
     $('#holder').show();
     $('#loading').hide();
     $('#pr.ptres').html(pr);
