@@ -43,21 +43,17 @@
         $.when(pt, pat).fail(onError);
         
         $.when(pt, obv).fail(onError);
-        
-        //get patient resource in JSON format
-        
-        function patientResource(pr) {
-          $.when(pt, pat).done(function(patient, pat) {
-            var pr = JSON.stringify(pat);
-            console.log('PATIENT RESOURCE: ' + '\n' + pr);          
-            return pr;
-          });
-        }
-        //end
                         
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
            //retrieve pt json file
+          
+          //get patient resource in JSON format
+          $.when(pt, pat).done(function(patient, pat) {
+            var pr = JSON.stringify(pat);
+            console.log('PATIENT RESOURCE: ' + '\n' + pr);          
+          });
+       //end
      
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
@@ -83,7 +79,8 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          
+          p.pr = pr;
+          console.log('PATIENT RESOURCE as part of function: ' + '\n' + p.pr);          
           console.log('DEFAULT PATIENT BASIC INFO: ' + '\n' + JSON.stringify(p)); // get patient demographics json
       
           if (typeof systolicbp != 'undefined')  {
@@ -120,6 +117,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      pr: {value: ''},
     };
   }
 
@@ -167,12 +165,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#pr').html(p.pr);
   };
-  
-  window.drawVisualizationPatient = function(pr) {
-    console.log('PATIENT FUNCTION: ' + '\n' + pr);
-    $('#holder').show();
-    $('#loading').hide();
-    $('#pr.ptres').html(pr);
-  };
+ 
 })(window);
