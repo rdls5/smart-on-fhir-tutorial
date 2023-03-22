@@ -93,35 +93,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="bundle.js" charset="utf-8"></script>
     
-    <script>
-      function onReady(smart)  {
-	      console.log('smart property: ' + smart.hasOwnProperty('patient'));
-      if (smart.hasOwnProperty('patient')) {
-        var patient = smart.patient;
-        
-        var ptdata = JSON.stringify(patient);
-        console.log('smart.patient - ID index file: ' + ptdata);   //retrieves the pt id in JSON format
-        
-        var pt = patient.read();
-      
-        //retrieve patient resource
-        var pat = smart.patient.api.fetchAll({
-                    type: 'Patient',
-                    query: {
-                      code: {
-                        $or: ['http://loinc.org|45392-8', 'http://loinc.org|45394-4',
-                              'http://loinc.org|21112-8', 'http://loinc.org|21840-4']
-                      }
-                    }
-                  });
-      $.when(pt, pat).done(function(patient, pat) {
-            var ptres = JSON.stringify(pat);
-            console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
-            console.log('PATIENT RESOURCE after function call: ' + '\n' + ptres);          
-          });
-	  }   
-	  }
-   </script>
+<script>
+      extractData().then( 
+        //Display Patient Demographics and Observations if extractData was success
+        function(dr) {
+          drawVisualization(dr);
+          console.log('drawVisualization2(dr) function');
+        },
+       
+        //Display 'Failed to call FHIR Service' if extractData failed
+        function() {
+          $('#loading').hide();
+          $('#errors').html('<p> Failed to call FHIR Service </p>');
+        }
+      );
+    </script>
+ 
     
     
        <script>
