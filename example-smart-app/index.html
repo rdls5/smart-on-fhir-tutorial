@@ -98,14 +98,15 @@
         },
       
         function(dr) {
+          console.log('drawVisualization 2 before');
           drawVisualization2(dr);
-          console.log('drawVisualization 2');
+          console.log('drawVisualization 2 after');
         },
         
         //Display 'Failed to call FHIR Service' if extractData failed
         function() {
           $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service </p>');
+          $('#errors').html('<p> Failed to call FHIR Service ERROR</p>');
         }
       );
     </script>
