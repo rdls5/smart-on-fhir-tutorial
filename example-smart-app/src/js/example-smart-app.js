@@ -45,14 +45,16 @@
         $.when(pt, obv).fail(onError);
         
         //get patient resource in JSON format
+        
           $.when(pt, pat).done(function(patient, pat) {
-            var ptres = JSON.stringify(pat);
-            console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
+            var pr = JSON.stringify(pat);
+            console.log('PATIENT RESOURCE: ' + '\n' + pr);          
             var dr = defaultResource();
-            dr.ptres = ptres;
+            dr.ptres = pr;
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
-             ret.resolve(dr);
+            ret.resolve(dr);
           });
+        
        //end
         
          function defaultResource(){
@@ -60,6 +62,7 @@
               ptres: {value: ''},
             };
          };
+        
         
         $.when(pt, obv).done(function(patient, obv) {
            console.log('OBSERVATION RESOURCE: ' + '\n' + JSON.stringify(obv)); 
@@ -140,6 +143,7 @@
         observation.valueQuantity = BP.valueQuantity;
         formattedBPObservations.push(observation);
       }
+      
     });
    
     return getQuantityValueAndUnit(formattedBPObservations[0]);
@@ -157,6 +161,7 @@
   }
 
   window.drawVisualization = function(p) {
+    console.log('fname: ' + p.fname);
     $('#holder').show();
     $('#loading').hide();
     $('#fname').html(p.fname);
@@ -168,11 +173,10 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-     console.log('fname in function: ' + p.fname);
   };
   
-  window.drawVisualization2 = function(dr) {
+   window.drawVisualization = function(dr) {
     $('#ptres').html(dr.ptres);
-    console.log('ptres on  drawvisualization2: ' + dr.ptres);
-  }
+     console.log('ptres: ' + dr.ptres);
+  };
 })(window);
