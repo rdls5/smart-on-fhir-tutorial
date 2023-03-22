@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -11,6 +12,7 @@
     -->
   </head>
   <body>
+   
       
     <div id='errors'>
     </div>
@@ -64,12 +66,9 @@
           <th>HDL:</th>
           <td id='hdl'></td>
         </tr>
-        <tr>
-          <th>Patient Data</th>
-          <td id='lname'></td>
-        </tr>
       </table>
     </div>
+	
     <!-- Required JS files to enable this page to embed within an MPage -->
     <!--
       Temporarily disable cerner-smart-embeddable-lib
@@ -87,42 +86,42 @@
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="bundle.js" charset="utf-8"></script>
     
-       <script>
-      extractData().then( 
-        //Display Patient Demographics and Observations if extractData was success
-         function(dr) {
-          drawVisualization2(dr);
-          console.log('drawVisualization 2');
-        },
-        
-        function(p) {
-          drawVisualization(p);
-          console.log('drawVisualization 1');
-        },
-      
-        //Display 'Failed to call FHIR Service' if extractData failed
-        function() {
-          $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service</p>');
-        }
-      );
-
-     
-     <!-- start add -->
+	
+    <!-- start add -->
      <script src='./src/js/filesaver.js'></script>
      <script type="text/javascript">
      var button = $('<button/>').html('click me').on('click', function() {
-        alert('alert on index file')   
-        var blob = new Blob(["Here is the patient:"], {type: "text/plain;charset=utf-8"});
+        alert('Saving file...')   
+        var blob = new Blob([ptdata], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "random.txt");
+        
     })
     $('body').append(button)
       
     </script> 
     <!-- end add -->
-   
+
+    <!-- start add -->
+    <script src="bundle.js" charset="utf-8"></script>
+    
+  <!-- start add -->
+  
+  
+    <script>
+      extractData().then(
+        //Display Patient Demographics and Observations if extractData was success
+        function(p) {
+          drawVisualization(p);
+        },
+
+        //Display 'Failed to call FHIR Service' if extractData failed
+        function() {
+          $('#loading').hide();
+          $('#errors').html('<p> Failed to call FHIR Service </p>');
+        }
+      );
+    </script>
   </body>
 </html>
 
