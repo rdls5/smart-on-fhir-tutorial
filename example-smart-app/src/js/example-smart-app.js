@@ -48,7 +48,7 @@
         
           $.when(pt, pat).done(function(patient, pat) {
             var pr = JSON.stringify(pat);
-            console.log('PATIENT RESOURCE: ' + '\n' + pr);          
+           // console.log('PATIENT RESOURCE: ' + '\n' + pr);          
             var dr = defaultResource();
             dr.ptres = pr;
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
@@ -176,7 +176,7 @@
   };
   
    window.drawVisualization2 = function(dr) {
-    $('#ptres').html(dr.ptres);
-     console.log('ptres: ' + dr.ptres);
+     console.log('ptres result: ' + dr.ptres);
+     $('#ptres').html(dr.ptres);
   };
 })(window);
