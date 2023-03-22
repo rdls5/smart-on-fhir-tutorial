@@ -54,7 +54,8 @@
         }
        //end
          
-        defaultResource();
+        var pt = defaultResource();
+        pt.pr = pr;
         console.log('default resource: ' + pr);
         
         $.when(pt, obv).done(function(patient, obv) {
