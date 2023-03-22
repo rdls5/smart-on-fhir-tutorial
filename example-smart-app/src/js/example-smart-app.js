@@ -45,11 +45,14 @@
         $.when(pt, obv).fail(onError);
         
         //get patient resource in JSON format
-        $.when(pt, pat).done(function(patient, pat) {
-          var pr = defaultResource();
-          pr.ptres = JSON.stringify(pat);
-          console.log('PATIENT RESOURCE: ' + '\n' + pr.ptres);          
-       });
+        
+        function patientResource(pr) {
+          $.when(pt, pat).done(function(patient, pat) {
+            var pr = JSON.stringify(pat);
+            console.log('PATIENT RESOURCE: ' + '\n' + pr);          
+            return pr;
+          });
+        }
         //end
                         
         $.when(pt, obv).done(function(patient, obv) {
@@ -120,13 +123,7 @@
     };
   }
 
-  //added
-  function defaultResource() {
-    return {
-      ptres: {value: ''},
-    };
-  }
-  //end
+
   
   function getBloodPressureValue(BPObservations, typeOfPressure) {
     var formattedBPObservations = [];
@@ -144,7 +141,6 @@
     });
    
     return getQuantityValueAndUnit(formattedBPObservations[0]);
-   
   }
 
   function getQuantityValueAndUnit(ob) {
@@ -173,8 +169,8 @@
     $('#hdl').html(p.hdl);
   };
   
-  window.drawVisualizationPatient = function(pr) {
-    console.log('PATIENT RESource FUNCTION: ' + '\n' + pr);
+  window.drawVisualizationPatient = function(patientResource(pr)) {
+    console.log('PATIENT FUNCTION: ' + '\n' + pr);
     $('#holder').show();
     $('#loading').hide();
     $('#pr.ptres').html(pr);
