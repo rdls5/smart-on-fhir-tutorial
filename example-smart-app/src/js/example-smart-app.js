@@ -169,10 +169,10 @@
     $('#hdl').html(p.hdl);
   };
   
-  window.drawVisualizationPatient = function(patientResource(pr) {
+  window.drawVisualizationPatient = function(pr) {
     console.log('PATIENT FUNCTION: ' + '\n' + pr);
     $('#holder').show();
     $('#loading').hide();
     $('#pr.ptres').html(pr);
-  });
+  };
 })(window);
