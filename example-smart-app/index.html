@@ -93,30 +93,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="bundle.js" charset="utf-8"></script>
     
-<script>
-      extractData().then( 
-        //Display Patient Demographics and Observations if extractData was success
-        function(dr) {
-          drawVisualization2(dr);
-          console.log('drawVisualization2(dr) function');
-        },
-       
-        //Display 'Failed to call FHIR Service' if extractData failed
-        function() {
-          $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }
-      );
-    </script>
- 
-    
-    
        <script>
       extractData().then( 
         //Display Patient Demographics and Observations if extractData was success
-        function(p) {
-          drawVisualization(p);
-          console.log('drawVisualization(p) function');
+        function(p,dr) {
+          drawVisualization(p,dr);
+          console.log('drawVisualization function');
         },
        
         //Display 'Failed to call FHIR Service' if extractData failed
