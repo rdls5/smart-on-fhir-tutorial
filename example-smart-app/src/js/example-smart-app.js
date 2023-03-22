@@ -174,9 +174,9 @@
   };
   
   window.drawVisualizationPatient = function(pr) {
-    console.log('PATIENT RES FUNCTION: ' + '\n' + pr.ptres);
+    console.log('PATIENT RES FUNCTION: ' + '\n' + pr);
     $('#holder').show();
     $('#loading').hide();
-    $('#pr.ptres').html(pr.ptres);
+    $('#pr.ptres').html(pr);
   };
 })(window);
