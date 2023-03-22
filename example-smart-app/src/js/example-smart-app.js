@@ -47,10 +47,10 @@
         //get patient resource in JSON format
         
           $.when(pt, pat).done(function(patient, pat) {
-            var pr = JSON.stringify(pat);
-            console.log('PATIENT RESOURCE: ' + '\n' + pr);          
+            var ptres = JSON.stringify(pat);
+            console.log('PATIENT RESOURCE: ' + '\n' + ptres);          
             var dr = defaultResource();
-            dr.ptres = pr;
+            dr.ptres = ptres;
             console.log('PATIENT RESOURCE after function call: ' + '\n' + dr.ptres);          
           });
         
@@ -142,7 +142,6 @@
         observation.valueQuantity = BP.valueQuantity;
         formattedBPObservations.push(observation);
       }
-      
     });
    
     return getQuantityValueAndUnit(formattedBPObservations[0]);
@@ -173,4 +172,10 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
+  
+   window.drawVisualization2 = function(dr) {
+    console.log('ptres: ' + dr.ptres);
+    $('#ptres').html(dr.ptres);
+  };
+  
 })(window);
