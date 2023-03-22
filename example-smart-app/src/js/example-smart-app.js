@@ -79,7 +79,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          p.pr = pr;
+          p.pr = JSON.stringify(pr);
           console.log('PATIENT RESOURCE as part of function: ' + '\n' + p.pr);          
           console.log('DEFAULT PATIENT BASIC INFO: ' + '\n' + JSON.stringify(p)); // get patient demographics json
       
