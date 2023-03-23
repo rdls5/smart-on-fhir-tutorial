@@ -95,7 +95,6 @@
 	   
              drawVisualization(p);
 	      ptresource = p.ptres;
-	     console.log('patient resource inside EXTRACTDATA function: ' + '\n' + ptresource);
         },
 
         //Display 'Failed to call FHIR Service' if extractData failed
@@ -104,7 +103,7 @@
           $('#errors').html('<p> Failed to call FHIR Service ERROR!!!</p>');
         }
       );
-console.log('patient resource outside EXTRACTDATA function: ' + '\n' + ptresource);
+
     </script>
 
       <!-- start add -->
@@ -117,21 +116,7 @@ console.log('patient resource outside EXTRACTDATA function: ' + '\n' + ptresourc
         
     })
     $('body').append(button)
-      
-	     
-    const fs = require('browserify-fs');
-    let data = "This is a file containing a collection of books.";
-      
-    fs.writeFile("books.txt", data, (err) => {
-      if (err)
-        console.log(err);
-      else {
-        console.log("File written successfully INDEX FILE\n");
-        console.log("The written has the following contents INDEX FILE:");
-       // console.log(fs.readFileSync("books.txt", "utf8"));
-      }
-    });
-	     
+
     </script> 
     <!-- end add -->
  
