@@ -16,7 +16,7 @@
         });
     });*/
 
-    const fs = require('browserify-fs');
+    /*const fs = require('browserify-fs');
     let data = "This is a file containing a collection of books.";
       
     fs.writeFile("books.txt", data, (err) => {
@@ -27,7 +27,7 @@
         console.log("The written has the following contents:");
        // console.log(fs.readFileSync("books.txt", "utf8"));
       }
-    });
+    });*/
 
 
 
